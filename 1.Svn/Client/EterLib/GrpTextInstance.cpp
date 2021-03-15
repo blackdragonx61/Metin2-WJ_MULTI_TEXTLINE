@@ -27,7 +27,7 @@ void CGraphicTextInstance::CheckMultiLine()
 		auto pTextInstance = std::make_shared<CGraphicTextInstance>(*this);
 		pTextInstance->SetEnterToken(false);
 		pTextInstance->SetValueString(v);
-		multi_text.emplace_back(pTextInstance);
+		multi_text.emplace_back(std::move(pTextInstance));
 	}
 	SetPosition(m_v3Position.x, m_v3Position.y, m_v3Position.z);
 }
